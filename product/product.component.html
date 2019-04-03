@@ -1,0 +1,239 @@
+<!-- <img src="https://www.w3schools.com/w3images/fjords.jpg"
+   alt="Lights" style="width:100%"> -->
+ 
+<div *ngIf="IsData">
+  <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:30%;height: 100px;">
+  <h1>{{ productData.product_name }}</h1>
+  <h2>{{ productData.product_description }}</h2>
+  <h3>{{ productData.product_price }}</h3>
+  <h4>{{ productData.product_color }}</h4>
+  <div>
+  <input type="button" name="decrese" value="-" (click)="Decrese()"/>
+  <input type="text" name="textfield" value="1" style="width: 40px;" [(ngModel)]="productQuantity" [disabled]="true"/>
+  <input type="button" name="increse" value="+" (click)="Increse()"/>
+  </div>
+  <input type="button" name="Addtocart" value="Add To Cart" (click)="AddToCart()"/>
+  </div>	
+
+ <!-- <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+     -->
+      <!-- <form>
+        <div class="form-group">
+          <label for="dateOfBirth">Date of birth</label>
+          <div class="input-group">
+            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form> -->
+    
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>  -->
+
+     <!-- <div class="card">
+    <app-signin></app-signin>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" 
+        (click)="modal.close('Save click')">Save </button>
+      </div>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add to cart</button>
+
+  <pre>{{closeResult}}</pre>  -->
+
+  <!-- popup box login & register -->
+
+   <!-- <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="close" aria-label="Close"
+         (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <ngb-tabset>
+  <ngb-tab>
+    <ng-template ngbTabTitle> <b>Login</b> </ng-template>
+  <ng-template ngbTabContent>
+   
+    <br>
+    <form action="">
+    
+        <div class="col-md-12">
+        
+            <div class="form-group">
+              <label for="email">E-Mail Address :</label>
+              <input type="email" class="form-control" id="email"
+              [(ngModel)]="email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password :</label>
+              <input type="password" class="form-control" id="pwd"
+              [(ngModel)]="password" name="password">
+            </div>
+            <div class="text-center">
+            <button type="submit" class="btn btn-info" (click)="addlogin()"  
+                 (click)="modal.close('Save click')">
+                  login
+            </button>
+          </div> 
+        </div>
+     
+    </form> -->
+    <!-- <app-signin></app-signin> -->
+
+  <!-- </ng-template>
+
+  </ngb-tab>
+  <ngb-tab>
+    <ng-template ngbTabTitle> <b>register </b> </ng-template>
+    <ng-template ngbTabContent>
+        <br>
+        <form class="form-horizontal" role="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+           
+            <div class="row">
+              <div class="col-md-4  text-right field-label-responsive">
+                <label for="name">Fisrt Name</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <input type="text" name="first_name" class="form-control" placeholder="user name" 
+                      required autofocus=""  [(ngModel)]="model.first_name" #first_name="ngModel"
+                      [ngClass]="{'is-invalid':f.submitted && first_name.invalid}">
+                      
+                      <div  class="invalid-feedback">
+                        <div>First Name is Required </div>
+                      </div>
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-4  text-right field-label-responsive">
+                <label for="name">Last Name</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem">
+                      <i class="fa fa-user"></i>
+                    </div>
+                    <input type="text" name="last_name" class="form-control" placeholder="user name" 
+                    required autofocus=""  [(ngModel)]="model.last_name" #last_name="ngModel"
+                    [ngClass]="{'is-invalid':f.submitted && last_name.invalid}">
+          
+                    <div  class="invalid-feedback">
+                      <div>Last Name is Required </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-4  text-right field-label-responsive">
+                <label for="name">Mobile</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <input type="text" name="mobile" class="form-control" placeholder="mobile number"
+                      required autofocus="" [(ngModel)]="model.mobile" #mobile="ngModel"
+                      [ngClass]="{'is-invalid':f.submitted && mobile.invalid}">
+                      <div  class="invalid-feedback">
+                      <div>Mobile Number is Required </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-4  text-right field-label-responsive">
+                <label for="email">E-Mail Address</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem">
+                      <i class="fa fa-envelope"></i>
+                    </div>
+                    <input type="text" name="email" class="form-control"  placeholder="you@example.com"
+                      required email autofocus=""  [(ngModel)]="model.email" #email="ngModel"
+                      [ngClass]="{'is-invalid':f.submitted && email.invalid}">
+          
+                      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                      <div *ngIf="email.errors.required">Email Name is Required </div>
+                      <div *ngIf="email.errors.email">Email must be a Valid email Address</div>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-4  text-right field-label-responsive">
+                <label for="Password">Password</label>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem">
+                      <i class="fa fa-lock"></i>
+                    </div>
+                    <input type="Password" name="password" class="form-control"placeholder="password" 
+                    required minlength="6"  autofocus="" [(ngModel)]="model.password" #password="ngModel"
+                    [ngClass]="{'is-invalid':f.submitted && password.invalid}">
+                    
+                    <div  *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                      <div *ngIf="password.errors.required">Password is Required </div>
+                      <div *ngIf="password.errors.minlength">Password must be at least 6 charecters</div>
+                    </div> 
+          
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-success" value="register,">
+                  <i class="fa fa-user-plus"></i>
+                  Register</button>
+              </div>
+            </div>
+            
+          </form> -->
+
+          <!-- <app-signup></app-signup> -->
+
+        <!-- </ng-template>
+      </ngb-tab>
+      </ngb-tabset>
+   
+    </ng-template>
+    <br> <br>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Add to Cart </button> -->
+   

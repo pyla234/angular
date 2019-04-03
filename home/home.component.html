@@ -1,0 +1,22 @@
+
+
+<div class="container" style="margin-top:50px;cursor: pointer">
+
+  <button *ngIf="authservice.isLoggednIn()" (click)="LogOut()"> logout </button> 
+         
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of products">
+        <div class="thumbnail">
+            <a routerLink="/product/{{ product.id }}" target="_blank">
+            <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Lights" style="width:100%">
+            <div class="caption">
+              <h3>product name:{{product.product_name}}</h3>
+              <p>Description:{{product.product_description}}</p>
+              <h3>product price:{{product.product_price}}</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+  </div>
+  

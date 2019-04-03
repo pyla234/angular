@@ -1,0 +1,133 @@
+<div class="container jumbotron">
+<form class="form-horizontal" role="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="row">
+    <div class="col-md-5 offset-4">
+      <p>Register New User</p>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3  text-right field-label-responsive">
+      <label for="name">Fisrt Name</label>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon" style="width: 2.6rem">
+            <i class="fa fa-user"></i>
+          </div>
+          <input type="text" name="first_name" class="form-control" placeholder="user name" 
+           required autofocus=""  [(ngModel)]="model.first_name" #first_name="ngModel"
+           [ngClass]="{'is-invalid':f.submitted && first_name.invalid}">
+           
+           <div  class="invalid-feedback">
+             <div>First Name is Required </div>
+           </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3  text-right field-label-responsive">
+      <label for="name">Last Name</label>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon" style="width: 2.6rem">
+            <i class="fa fa-user"></i>
+          </div>
+          <input type="text" name="last_name" class="form-control" placeholder="user name" 
+          required autofocus=""  [(ngModel)]="model.last_name" #last_name="ngModel"
+          [ngClass]="{'is-invalid':f.submitted && last_name.invalid}">
+
+          <div  class="invalid-feedback">
+           <div>Last Name is Required </div>
+         </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3  text-right field-label-responsive">
+      <label for="name">Mobile</label>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon" style="width: 2.6rem">
+            <i class="fa fa-phone"></i>
+          </div>
+          <input type="text" name="mobile" class="form-control" placeholder="mobile number"
+           required autofocus="" [(ngModel)]="model.mobile" #mobile="ngModel"
+           [ngClass]="{'is-invalid':f.submitted && mobile.invalid}">
+           <div  class="invalid-feedback">
+            <div>Mobile Number is Required </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3  text-right field-label-responsive">
+      <label for="email">E-Mail Address</label>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon" style="width: 2.6rem">
+            <i class="fa fa-envelope"></i>
+          </div>
+          <input type="text" name="email" class="form-control"  placeholder="you@example.com"
+           required email autofocus=""  [(ngModel)]="model.email" #email="ngModel"
+           [ngClass]="{'is-invalid':f.submitted && email.invalid}">
+
+           <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email Name is Required </div>
+            <div *ngIf="email.errors.email">Email must be a Valid email Address</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3  text-right field-label-responsive">
+      <label for="Password">Password</label>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon" style="width: 2.6rem">
+            <i class="fa fa-lock"></i>
+          </div>
+          <input type="Password" name="password" class="form-control"placeholder="password" 
+          required minlength="6"  autofocus="" [(ngModel)]="model.password" #password="ngModel"
+          [ngClass]="{'is-invalid':f.submitted && password.invalid}">
+          
+          <div  *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+           <div *ngIf="password.errors.required">Password is Required </div>
+           <div *ngIf="password.errors.minlength">Password must be at least 6 charecters</div>
+         </div> 
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-3">
+       <button type="submit" class="btn btn-success" value="register,">
+        <i class="fa fa-user-plus"></i>
+        Register</button>
+    </div>
+  </div>
+  
+</form>
+
+</div>
